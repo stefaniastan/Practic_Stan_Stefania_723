@@ -39,6 +39,7 @@ public class Main {
             System.out.println("1. Show all fahrers");
             System.out.println("2. Show all penalties");
             System.out.println("3. Show all events");
+            System.out.println("4. Show all ACTIVE drivers from team...");
             System.out.println("0. Iesire");
             System.out.print("Alege optiunea: ");
             optiune = scanner.nextInt();
@@ -48,6 +49,9 @@ public class Main {
                 case 1: fahrerController.showFahrers(); System.out.println("nr total de soferi: " + fahrerService.getNumberOfFahrers()); break;
                 case 2: strafeController.showStrafen(); System.out.println("nr total de penalizari: " + strafeService.getNumberOfPenalties()); break;
                 case 3: rennenEreignisController.showRennenEreignissen(); System.out.println("nr total de evenimente: " + rennenEreignisService.getNumberOfEvents()); break;
+                case 4: System.out.println("enter team:" );
+                        String team = scanner.nextLine();
+                        fahrerController.getActiveFahrersFromTeam(team); break;
                 case 0: System.out.println("La revedere!"); break;
                 default: System.out.println("Optiune invalida!");
             }

@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class FahrerService {
     private final AbstractRepository<Fahrer> fahrerRepository;
@@ -25,6 +27,17 @@ public class FahrerService {
     }
     public int getNumberOfFahrers() {
         return fahrerRepository.findAll().size();
+    }
+
+    //aufgabe 2
+    //die fahrers die active sind von ein team (gelesen vo tastatur)
+
+    public List<Fahrer> getActiveFahrersFromTeam(String team) {
+        return fahrerRepository.findAll().stream()
+                .filter(f -> f.getTeam().equalsIgnoreCase(team))
+                .filter(f-> "active".equalsIgnoreCase(f.getStatus().toString()))
+                .collect(Collectors.toList());
+
     }
 
 

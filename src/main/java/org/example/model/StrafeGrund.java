@@ -1,8 +1,8 @@
 package org.example.model;
 
 public enum StrafeGrund {
-    track_limits,
-    collision,
-    unsafe_release,
-    speeding_pitlane
+    TRACK_LIMITS,
+    COLLISION,
+    UNSAFE_RELEASE,
+    SPEEDING_PITLANE
 }

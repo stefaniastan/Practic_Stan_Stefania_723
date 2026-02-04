@@ -60,4 +60,15 @@ public class Fahrer implements InFileRepository.IdProvider {
     public void setSkillLevel(Integer skillLevel) {
         this.skillLevel = skillLevel;
     }
+
+    @Override
+    public String toString() {
+        return "Fahrer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", team='" + team + '\'' +
+                ", status=" + status +
+                ", skillLevel=" + skillLevel +
+                '}';
+    }
 }

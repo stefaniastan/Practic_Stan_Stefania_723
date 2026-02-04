@@ -26,8 +26,11 @@ public class FahrerController {
     //aufgabe 2
     public void getActiveFahrersFromTeam(String team) {
         List<Fahrer> fahrers = fahrerService.getActiveFahrersFromTeam(team);
-        for (Fahrer fahrer : fahrers) {
-            System.out.println(fahrer);
+        for (Fahrer f : fahrers) {
+            System.out.println("[" + f.getId() + "] " +
+                    f.getName() + " (" + f.getTeam() + ") - " +
+                    f.getStatus() + ", skill=" + f.getSkillLevel()
+            );
         }
     }
 
